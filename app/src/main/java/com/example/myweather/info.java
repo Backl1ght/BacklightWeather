@@ -4,6 +4,8 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.example.myweather.DataBase.DataBaseHelper;
 
+import java.util.Set;
+
 public class info {
     private static String lat = "0";
 
@@ -18,7 +20,18 @@ public class info {
     private static String JSONStringNow;
 
     private static String JSONStringDaily;
+
     private static String JSONStringHourly;
+
+    private static Set<String> cityset;
+
+    public static Set<String> getCityset() {
+        return cityset;
+    }
+
+    public static void setCityset(Set<String> cityset) {
+        info.cityset = cityset;
+    }
 
     public static String getJSONStringNow() {
         return JSONStringNow;
@@ -51,7 +64,6 @@ public class info {
 
     public static void save() {
         //TODO: 保存数据到数据库
-
 
     }
 

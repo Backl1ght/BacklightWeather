@@ -18,6 +18,7 @@ import com.example.myweather.DailyWeather.DailyWeatherDataHelper;
 import com.example.myweather.DailyWeather.DailyWeatherListFragment;
 import com.example.myweather.HourlyWeather.HourlyWeatherDataHelper;
 import com.example.myweather.HourlyWeather.HourlyWeatherListFragment;
+import com.example.myweather.Menu.CityManage.CityManageActivity;
 import com.example.myweather.Menu.LocationActivity;
 import com.example.myweather.Menu.SettingsActivity;
 
@@ -124,6 +125,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.settings:
                 Intent intent3 = new Intent(this, SettingsActivity.class);
                 startActivity(intent3);
+                return true;
+            case R.id.cityset:
+                Intent intent4 = new Intent(this, CityManageActivity.class);
+                startActivity(intent4);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

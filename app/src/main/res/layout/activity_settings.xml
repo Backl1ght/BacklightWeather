@@ -38,7 +38,7 @@
             android:id="@+id/character"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="温度符号"
+            android:text="温度单位"
             android:textColor="#000000"
             android:textSize="30dp"
             />

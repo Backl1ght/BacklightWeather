@@ -12,6 +12,11 @@
 
 ### TODO
 
+- [x] 使用okhttp替换HttpURLConnection
 - [ ] 完善支持华氏度单位的功能
-- [ ] SQLite数据库保存离线数据
+- [ ] 保存离线数据，当无网络连接时就显示离线数据
 - [ ] 多标签页显示多个城市的天气
+  - [x] 城市列表
+  - [ ] 城市选择(没找到能用的CityPicker)
+  - [ ] 多标签页(VIewPager + CircleIndicator)
+- [ ] 美化界面

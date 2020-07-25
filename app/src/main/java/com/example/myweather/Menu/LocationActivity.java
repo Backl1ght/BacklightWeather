@@ -21,7 +21,7 @@ public class LocationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_location);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Location");
+        getSupportActionBar().setTitle("定位");
 
         MapView mapView = findViewById(R.id.map);
         mapView.onCreate(savedInstanceState);// 此方法必须重写

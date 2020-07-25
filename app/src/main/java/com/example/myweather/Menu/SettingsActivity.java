@@ -61,7 +61,7 @@ public class SettingsActivity extends AppCompatActivity {
         });
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Settings");
+        getSupportActionBar().setTitle("设置");
         updateUI();
     }
 

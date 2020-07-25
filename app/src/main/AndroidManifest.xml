@@ -14,7 +14,9 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
 
-    <meta-data android:name="com.amap.api.v2.apikey" android:value="**********************************"></meta-data>
+    <meta-data
+        android:name="com.amap.api.v2.apikey"
+        android:value="替换自己的KEY"></meta-data>
 
     <application
         android:allowBackup="true"
@@ -23,10 +25,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DailyWeather.DailyWeatherActivity"/>
-        <activity android:name=".Menu.SettingsActivity"/>
-        <activity android:name=".Menu.LocationActivity"/>
-        <activity android:name=".Menu.ShareActivity"/>
+        <activity android:name=".DailyWeather.DailyWeatherActivity" />
+        <activity android:name=".Menu.SettingsActivity" />
+        <activity android:name=".Menu.LocationActivity" />
+        <activity android:name=".Menu.CityManage.CityManageActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,7 +37,7 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".NoteService"/>
+        <service android:name=".NoteService" />
     </application>
 
 </manifest>

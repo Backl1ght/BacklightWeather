@@ -50,7 +50,6 @@ public class HourlyWeatherDataHelper {
             hourlyWeather.setTime(hours[1]);
             hourlyWeather.setCode(hourJson.getString("cond_code"));
             String t = hourJson.getString("tmp");
-//            t=String.valueOf(Integer.valueOf(t)*18/10+32);
             hourlyWeather.setTmp(t);
             data.add(hourlyWeather);
         }

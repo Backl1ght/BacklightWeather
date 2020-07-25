@@ -6,19 +6,19 @@
     <item
         android:id="@+id/share"
         android:icon="@android:drawable/ic_menu_share"
-        android:title="Share"
+        android:title="分享"
         app:showAsAction="ifRoom"
         />
 
     <item
         android:id="@+id/map"
-        android:title="Map Location"
+        android:title="定位"
         app:showAsAction="never"
         />
 
     <item
         android:id="@+id/settings"
-        android:title="Settings"
+        android:title="设置"
         app:showAsAction="never"
         />
 </menu>

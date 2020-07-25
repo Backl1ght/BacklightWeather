@@ -4,16 +4,14 @@ import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Message;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.nio.charset.StandardCharsets;
+import okhttp3.Call;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 public class FetchItemsTask extends AsyncTask<String, Integer, String> {
 
-    private String key = "*********************************";
+    private String key = "替换自己的KEY";
 
     private String mType;
     private String mLocation;
@@ -27,38 +25,20 @@ public class FetchItemsTask extends AsyncTask<String, Integer, String> {
 
     @Override
     protected String doInBackground(String... params) {
-
-        StringBuilder sb = new StringBuilder();
-        InputStream is = null;
-        BufferedReader br = null;
         try {
             // 设置接口参数
             String url = "https://free-api.heweather.net/s6/weather/" + mType + "?location=" + mLocation + "&key=" + key;
-            URL uri = new URL(url);
-            HttpURLConnection connection = (HttpURLConnection) uri.openConnection();
-            connection.setRequestMethod("GET");
-            // 连接
-            connection.connect();
-            // 接收结果
-            is = connection.getInputStream();
-            br = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8));
-            String line;
-            while ((line = br.readLine()) != null) {
-                sb.append(line);
-            }
-
-            System.out.println(sb.toString());
-            return sb.toString();
-
+            OkHttpClient client = new OkHttpClient();
+            Request request = new Request.Builder()
+                    .get()
+                    .url(url)
+                    .build();
+            Call call = client.newCall(request);
+            Response response = call.execute();
+            String result = response.body().string();
+            return result;
         } catch (Exception e) {
             e.printStackTrace();
-        } finally {
-            try {
-                if (is != null) is.close();
-                if (br != null) br.close();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
         }
         return null;
     }
