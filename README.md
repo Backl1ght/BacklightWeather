@@ -8,7 +8,7 @@
 
 ### 效果
 
-<img src="./images/main.png" alt="main" style="zoom:25%;" />
+<img src="./images/main.png" alt="main"/>
 
 ### TODO
 
@@ -18,5 +18,5 @@
 - [ ] 多标签页显示多个城市的天气
   - [x] 城市列表
   - [ ] 城市选择(没找到能用的CityPicker)
-  - [ ] 多标签页(VIewPager + CircleIndicator)
+  - [ ] 多标签页(ViewPager + CircleIndicator)
 - [ ] 美化界面
