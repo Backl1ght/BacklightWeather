@@ -8,14 +8,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myweather.R;
+import com.zhuxu.citypickerz.interfaces.CommonPickerXInterface;
+import com.zhuxu.citypickerz.model.CityBean;
+import com.zhuxu.citypickerz.model.CityPickerConfig;
+import com.zhuxu.citypickerz.model.HeadModelConfig;
+import com.zhuxu.citypickerz.modules.CityPickerXFragment;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CityManageActivity extends AppCompatActivity {
@@ -37,7 +42,32 @@ public class CityManageActivity extends AppCompatActivity {
         mButton_addCity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                pickCity();
+//                Toast.makeText(context, "功能尚未完成", Toast.LENGTH_SHORT).show();
+                CityPickerXFragment cityPickerXFragment = CityPickerXFragment.startShow(CityManageActivity.this, getCityPickerConfig());
+                cityPickerXFragment.setPickerXInterface(new CommonPickerXInterface() {
+                    @Override
+                    public void onClick(CityBean cityBean) {
+//                        Toast.makeText(getApplicationContext(), "you clicked " + cityBean.getName() + " , this is a " + cityBean.getType(), Toast.LENGTH_SHORT).show();
+                        CityDataHelper.addCity(cityBean.getName());
+                        updateUI();
+                        cityPickerXFragment.dismiss();
+                    }
+
+                    @Override
+                    public void onDismiss() {
+//                        Toast.makeText(getApplicationContext(), "dismiss", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onSearch(String s) {
+//                        Toast.makeText(getApplicationContext(), "you search " + s, Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onReset() {
+//                        Toast.makeText(getApplicationContext(), "reset", Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
         });
 
@@ -47,9 +77,30 @@ public class CityManageActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("管理城市");
     }
 
-    public void pickCity() {
-        // TODO: 完成城市选择
-        Toast.makeText(getApplicationContext(), "功能尚未完成", Toast.LENGTH_SHORT).show();
+    private CityPickerConfig getCityPickerConfig() {
+        List<CityBean> listLocation = new ArrayList<>();
+        listLocation.add(new CityBean("济南n", "山东", "0546", "定位", CityBean.TYPE_STR_LOCATION));
+        listLocation.add(new CityBean("黄河路n", "山东", "0546", "定位", CityBean.TYPE_STR_LOCATION));
+
+        List<CityBean> listRecent = new ArrayList<>();
+        listRecent.add(new CityBean("济南n", "山东", "0546", "最近", CityBean.TYPE_STR_RECENT));
+        listRecent.add(new CityBean("深圳n", "山东", "0546", "最近", CityBean.TYPE_STR_RECENT));
+
+        List<CityBean> listHot = new ArrayList<>();
+        listHot.add(new CityBean("北京n", "山东", "0546", "热门", CityBean.TYPE_STR_LIST));
+        listHot.add(new CityBean("深圳n", "山东", "0546", "热门", CityBean.TYPE_STR_LIST));
+
+        HeadModelConfig locationConfig = new HeadModelConfig("当前定位", listLocation);
+        // setTag以用于更新数据
+//        locationConfig.setTag("当前定位");
+        HeadModelConfig recentConfig = new HeadModelConfig("最近访问", listRecent, true, "近", 0, 0);
+//        recentConfig.setTag("最近访问");
+        HeadModelConfig hotConfig = new HeadModelConfig("热门城市", listHot, true, "热", 0, 0);
+//        hotConfig.setTag("热门城市");
+        // 生成配置类 CityPickerConfig 可点击查看详细备注
+        // 最后参数设置为null  则表示使用自带的数据库列表 否则可在此实现自定义列表数据
+        CityPickerConfig cityPickerConfig = new CityPickerConfig(locationConfig, recentConfig, hotConfig, null);
+        return cityPickerConfig;
     }
 
     public void updateUI() {

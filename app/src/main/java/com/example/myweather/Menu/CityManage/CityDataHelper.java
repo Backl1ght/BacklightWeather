@@ -15,6 +15,7 @@ import static android.content.Context.MODE_PRIVATE;
 
 public class CityDataHelper {
     private static final String KEY = "CITY_SET";
+
     public static List<City> getCityList() {
         SharedPreferences sharedPreferences = MainActivity.sMainActivity.getPreferences(MODE_PRIVATE);
         Set<String> city_set = sharedPreferences.getStringSet(KEY, null);
@@ -27,7 +28,7 @@ public class CityDataHelper {
                 city_list.add(new City(name));
                 Log.d("CITY", name);
             }
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -48,7 +49,7 @@ public class CityDataHelper {
             for (String str : city_set) {
                 city_list.add(new City(str));
             }
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -71,7 +72,7 @@ public class CityDataHelper {
             for (String str : city_set) {
                 city_list.add(new City(str));
             }
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 

@@ -11,7 +11,6 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.os.Build;
 import android.os.SystemClock;
-import android.util.Log;
 
 import androidx.core.app.NotificationCompat;
 

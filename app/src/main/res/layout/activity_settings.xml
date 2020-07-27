@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,16 +16,14 @@
             android:layout_height="wrap_content"
             android:text="城市名"
             android:textColor="#000000"
-            android:textSize="30dp"
-            />
+            android:textSize="30dp" />
 
         <TextView
             android:id="@+id/city"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="长沙"
-            android:textSize="20dp"
-            />
+            android:textSize="20dp" />
 
     </LinearLayout>
 
@@ -40,16 +39,14 @@
             android:layout_height="wrap_content"
             android:text="温度单位"
             android:textColor="#000000"
-            android:textSize="30dp"
-            />
+            android:textSize="30dp" />
 
         <TextView
             android:id="@+id/ch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="℃"
-            android:textSize="20dp"
-            />
+            android:textSize="20dp" />
 
     </LinearLayout>
 
@@ -65,16 +62,14 @@
             android:layout_height="wrap_content"
             android:text="是否开启天气通知"
             android:textColor="#000000"
-            android:textSize="30dp"
-            />
+            android:textSize="30dp" />
 
         <TextView
             android:id="@+id/flag"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="是"
-            android:textSize="20dp"
-            />
+            android:textSize="20dp" />
 
     </LinearLayout>
 

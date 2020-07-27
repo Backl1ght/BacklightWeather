@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
+    android:orientation="vertical"
     android:paddingBottom="40dp">
 
     <TextView
         android:id="@+id/location"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="烫烫烫"
-        android:paddingTop="5dp"
-        android:paddingLeft="20dp"
-        android:textSize="30sp"
         android:gravity="left"
-        android:textColor="@color/colorForeground"/>
+        android:paddingLeft="20dp"
+        android:paddingTop="5dp"
+        android:text="烫烫烫"
+        android:textColor="@color/colorForeground"
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="烫烫烫"
-        android:textSize="20sp"
-        android:paddingTop="5dp"
-        android:paddingLeft="20dp"
         android:gravity="start"
-        android:textColor="@color/colorForeground"/>
+        android:paddingLeft="20dp"
+        android:paddingTop="5dp"
+        android:text="烫烫烫"
+        android:textColor="@color/colorForeground"
+        android:textSize="20sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -38,11 +38,11 @@
             android:id="@+id/tmp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:paddingLeft="20dp"
             android:text="99/99°C"
             android:textColor="@color/colorForeground"
-            android:textSize="50sp"
-            android:layout_gravity="center_vertical"/>
+            android:textSize="50sp" />
 
 
         <LinearLayout
@@ -54,17 +54,17 @@
                 android:id="@+id/img"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@mipmap/p999"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:src="@mipmap/p999" />
 
             <TextView
                 android:id="@+id/txt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="烫烫"
-                android:textSize="20sp"
                 android:gravity="center"
-                android:textColor="@color/colorForeground"/>
+                android:text="烫烫"
+                android:textColor="@color/colorForeground"
+                android:textSize="20sp" />
 
         </LinearLayout>
 
@@ -76,8 +76,8 @@
         android:layout_height="wrap_content"
         android:paddingLeft="10dp"
         android:text="烫烫"
-        android:textSize="30sp"
-        android:textColor="@color/colorForeground"/>
+        android:textColor="@color/colorForeground"
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/pres"
@@ -85,8 +85,8 @@
         android:layout_height="wrap_content"
         android:paddingLeft="10dp"
         android:text="烫烫"
-        android:textSize="30sp"
-        android:textColor="@color/colorForeground"/>
+        android:textColor="@color/colorForeground"
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/wind"
@@ -94,7 +94,7 @@
         android:layout_height="wrap_content"
         android:paddingLeft="10dp"
         android:text="烫烫"
-        android:textSize="30sp"
-        android:textColor="@color/colorForeground"/>
+        android:textColor="@color/colorForeground"
+        android:textSize="30sp" />
 
 </LinearLayout>

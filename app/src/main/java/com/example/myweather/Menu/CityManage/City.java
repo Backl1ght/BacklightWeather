@@ -4,7 +4,8 @@ public class City {
     private String CityName;
     private boolean isCurrent;
 
-    City() {}
+    City() {
+    }
 
     City(String name) {
         CityName = name;

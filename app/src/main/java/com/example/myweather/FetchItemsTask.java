@@ -11,7 +11,7 @@ import okhttp3.Response;
 
 public class FetchItemsTask extends AsyncTask<String, Integer, String> {
 
-    private String key = "替换自己的KEY";
+    private String key = "replace with your key";
 
     private String mType;
     private String mLocation;
