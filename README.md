@@ -20,3 +20,7 @@
   - [x] 城市选择
   - [ ] 多标签页(ViewPager + CircleIndicator)
 - [ ] 美化界面
+
+### 参考
+
+1. [CityPickerX](https://github.com/zhuxu1/CityPickerX)
