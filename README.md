@@ -1,6 +1,8 @@
 # SimpleWeatherApp
 一个简单的安卓天气应用，数据来源为和风天气。
 
+该仓库不再更新，最新版本请见[Backl1ghtWeather](https://github.com/Backl1ght/Backl1ghtWeather)。
+
 ### 使用
 
 1. 注册和风天气的key，替换掉FetchItemsTask.java中的key值。
